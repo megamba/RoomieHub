@@ -22,6 +22,7 @@ class _CalendarPageState extends State<CalendarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         body: Column(
           children: [
               SizedBox(
@@ -53,13 +54,25 @@ class _CalendarPageState extends State<CalendarPage> {
               height: 20,
             ),
 
-              SfCalendar(
-              view: CalendarView.month,
-              firstDayOfWeek: 7,
-              dataSource: MeetingDataSource(getAppointments()),
-            ),
+              Container(
+                height:500,
+                child: SfCalendar(
+                  backgroundColor: Color(0xffC9C9C9),
+                  viewHeaderStyle: ViewHeaderStyle(backgroundColor: Colors.lightBlue),
+                  view: CalendarView.month,
+                  firstDayOfWeek: 7,
+                  dataSource: MeetingDataSource(getAppointments()),
+                  monthViewSettings: MonthViewSettings(
+                    showAgenda: true,
+                    numberOfWeeksInView: 6,
+                  ),
+                ),
+              ),
 
-            Row(
+
+
+
+/*            Row(
               children: [
                 SizedBox(
                   width: 30,
@@ -71,8 +84,17 @@ class _CalendarPageState extends State<CalendarPage> {
                     child: Text(
                       'Events',
                       style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+
                     ),
                   ),
+                ),
+                IconButton(padding: EdgeInsets.zero,
+                  icon: const Icon(Icons.add_circle_outline_rounded),
+                  iconSize: 20,
+                  color: Color(0xff787878),
+                  onPressed: (){
+
+                  },
                 ),
               ],
             ),
@@ -90,10 +112,9 @@ class _CalendarPageState extends State<CalendarPage> {
               child: ListView(
                 padding: EdgeInsets.all(12),
                 children: [
-
                 ],
               ),
-            ),
+            ),*/
 
 
 
@@ -113,7 +134,7 @@ List<Appointment> getAppointments() {
       startTime: startTime,
       endTime: endTime,
       subject: '<Roomie 1> Birthday Party',
-      color: Colors.blue,
+      color: Colors.deepPurpleAccent,
       //recurrenceRule: 'FREQ=DAILY;COUNT=3',
       isAllDay: false));
 
@@ -123,6 +144,30 @@ List<Appointment> getAppointments() {
       subject: 'Board Meeting',
       color: Colors.blue,
       recurrenceRule: 'FREQ=DAILY;COUNT=3',
+      isAllDay: false));
+
+  meetings.add(Appointment(
+      startTime: DateTime(2021, 12, 8, 12, 0, 0),
+      endTime: endTime,
+      subject: 'Work',
+      color: Colors.pink,
+      recurrenceRule: 'FREQ=DAILY;COUNT=1',
+      isAllDay: false));
+
+  meetings.add(Appointment(
+      startTime: DateTime(2021, 12, 24, 9, 0, 0),
+      endTime: DateTime(2021, 12, 24, 2, 0, 0),
+      subject: 'Christmas Eve',
+      color: Colors.lightGreen,
+      recurrenceRule: 'FREQ=DAILY;COUNT=1',
+      isAllDay: false));
+
+  meetings.add(Appointment(
+      startTime: DateTime(2021, 12, 25, 9, 5, 0),
+      endTime: DateTime(2021, 12, 25, 2, 0, 0),
+      subject: 'Christmas Day',
+      color: Colors.lightGreen,
+      recurrenceRule: 'FREQ=DAILY;COUNT=1',
       isAllDay: false));
 
   return meetings;

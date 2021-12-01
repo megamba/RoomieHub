@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Roomie Hub',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // Define the default brightness and colors.
         brightness: Brightness.dark,
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         ),
 
       ),
-      home: HomePage(title: 'Flutter Demo Home Page'),
+      home: MySplashPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -85,8 +86,8 @@ class _MySplashPageState extends State<MySplashPage> {
             image: DecorationImage(
               colorFilter: new ColorFilter.mode(
                   Colors.black.withOpacity(0.9), BlendMode.dstATop),
-              image: NetworkImage(
-                  'https://i.pinimg.com/originals/0f/9c/ee/0f9cee95e0958154f324b77cb04164f2.jpg'),
+              image: AssetImage(
+                  'assets/RoomieHub.png'),
               fit: BoxFit.cover,
             ),
         ),
@@ -164,7 +165,7 @@ class _MySplashPageState extends State<MySplashPage> {
                   borderRadius: BorderRadius.circular(20.0),
                   side: BorderSide(color: Colors.white)),
               child: Text("SIGN UP",
-                  style: TextStyle(color: Colors.deepOrangeAccent, fontSize: 18)),
+                  style: TextStyle(color: Colors.teal, fontSize: 18)),
             )
           ],
         ),

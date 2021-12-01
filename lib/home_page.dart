@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/login.dart';
+import 'package:flutter_projects/profile.dart';
 import 'package:flutter_projects/roomies_page.dart';
+//import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 import 'checkbox_state.dart';
 import 'chore_items.dart';
@@ -35,6 +37,25 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
         backgroundColor: Color(0xFFea5171),
       ),
+
+ /*     floatingActionButton: SpeedDial(
+        animatedIcon: AnimatedIcons.menu_close,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.checklist_rounded),
+            label: 'Chore'
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.shopping_cart_rounded),
+              label: 'Shopping List Item'
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.event_rounded),
+              label: 'Event'
+          ),
+        ],
+      ),*/
+
       body: Column(
         children: [
               SizedBox(
@@ -57,13 +78,21 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: 70,
                   ),
-                  CircleAvatar(
-                    radius: 30,
+
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(title: "profile")));
+                    },
                     child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('assets/Profile-Photo-Wallpaper.jpg'),
+                      radius: 30,
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/Profile-Photo-Wallpaper.jpg'),
+                      ),
                     ),
-                  )
+                  ),
+
                 ],
               ),
 
@@ -181,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                     iconSize: 30,
                     color: Color(0xff787878),
                     onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MySplashPage(title: "splash")));
+
                     },
                   ),
                 ],
@@ -218,14 +247,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  IconButton(padding: EdgeInsets.zero,
+                  /*IconButton(padding: EdgeInsets.zero,
                     icon: const Icon(Icons.more_horiz_rounded),
                     iconSize: 30,
                     color: Color(0xff787878),
                     onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MySplashPage(title: "splash")));
+
                     },
-                  ),
+                  ),*/
                 ],
               ),
 
