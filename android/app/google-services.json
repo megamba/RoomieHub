@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "216574965235",
+    "project_id": "roomie-hub",
+    "storage_bucket": "roomie-hub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216574965235:android:360b6910f2fc1a88c10e86",
+        "android_client_info": {
+          "package_name": "com.roomie.hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216574965235-bo32k6418jpodd361r1a5jkajju3r270.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9cYM2ffBQtkTB9moNHz5XCCSUM64zYIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216574965235-bo32k6418jpodd361r1a5jkajju3r270.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
